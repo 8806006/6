@@ -260,17 +260,17 @@ vmess://$(echo "none:${UUID}@[2606:4700:4700::1001]:443" | base64 -w0)?remarks=R
 ----------------------------
 trojan://${UUID}@[2606:4700:4700::1001]:443?peer=\${ARGO_DOMAIN}&plugin=obfs-local;obfs=websocket;obfs-host=\${ARGO_DOMAIN};obfs-uri=${WP}j%3Fed%3D2048#Rd-${URL%.onrender.com}-Tj-$v4l$v4
 ----------------------------
-ss://$(echo "chacha20-ietf-poly1305:${UUID}@[2606:4700:4700::1001]:443" | base64 -w0)?obfs=wss&obfsParam=\${ARGO_DOMAIN}&path=${WP}s%3Fed%3D2048#Rd-${URL%.onrender.com}-Ss-$v4l$v4
+ss://$(echo "chacha20-ietf-poly1305:${UUID}@[2606:4700:4700::1001]:443" | base64 -w0)?obfs=wss&obfsParam=\${ARGO_DOMAIN}&path=${WP}s?ed=2048#Rd-${URL%.onrender.com}-Ss-$v4l$v4
 *******************************************
 Clash:
 ----------------------------
-- {name: Rd-${URL%.onrender.com}-Vl-$v4l$v4, type: vless, server: [2606:4700:4700::1001], port: 443, uuid: ${UUID}, tls: true, servername: \${ARGO_DOMAIN}, skip-cert-verify: false, network: ws, ws-opts: {path: ${WP}l%3Fed%3D2048, headers: { Host: \${ARGO_DOMAIN}}}, udp: true}
+- {name: Rd-${URL%.onrender.com}-Vl-$v4l$v4, type: vless, server: [2606:4700:4700::1001], port: 443, uuid: ${UUID}, tls: true, servername: \${ARGO_DOMAIN}, skip-cert-verify: false, network: ws, ws-opts: {path: ${WP}l?ed=2048, headers: { Host: \${ARGO_DOMAIN}}}, udp: true}
 ----------------------------
-- {name: Rd-${URL%.onrender.com}-Vm-$v4l$v4, type: vmess, server: [2606:4700:4700::1001], port: 443, uuid: ${UUID}, alterId: 0, cipher: none, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: ${WP}%3Fed%3D2048, headers: {Host: \${ARGO_DOMAIN}}}, udp: true}
+- {name: Rd-${URL%.onrender.com}-Vm-$v4l$v4, type: vmess, server: [2606:4700:4700::1001], port: 443, uuid: ${UUID}, alterId: 0, cipher: none, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: ${WP}?ed=2048, headers: {Host: \${ARGO_DOMAIN}}}, udp: true}
 ----------------------------
-- {name: Rd-${URL%.onrender.com}-Tj-$v4l$v4, type: trojan, server: [2606:4700:4700::1001], port: 443, password: ${UUID}, udp: true, tls: true, sni: \${ARGO_DOMAIN}, skip-cert-verify: false, network: ws, ws-opts: { path: ${WP}j%3Fed%3D2048, headers: { Host: \${ARGO_DOMAIN} } } }
+- {name: Rd-${URL%.onrender.com}-Tj-$v4l$v4, type: trojan, server: [2606:4700:4700::1001], port: 443, password: ${UUID}, udp: true, tls: true, sni: \${ARGO_DOMAIN}, skip-cert-verify: false, network: ws, ws-opts: { path: ${WP}j?ed=2048, headers: { Host: \${ARGO_DOMAIN} } } }
 ----------------------------
-- {name: Rd-${URL%.onrender.com}-Ss-$v4l$v4, type: ss, server: [2606:4700:4700::1001], port: 443, cipher: chacha20-ietf-poly1305, password: ${UUID}, plugin: v2ray-plugin, plugin-opts: { mode: websocket, host: \${ARGO_DOMAIN}, path: ${WP}s%3Fed%3D2048, tls: true, skip-cert-verify: false, mux: false } }
+- {name: Rd-${URL%.onrender.com}-Ss-$v4l$v4, type: ss, server: [2606:4700:4700::1001], port: 443, cipher: chacha20-ietf-poly1305, password: ${UUID}, plugin: v2ray-plugin, plugin-opts: { mode: websocket, host: \${ARGO_DOMAIN}, path: ${WP}s?ed=2048, tls: true, skip-cert-verify: false, mux: false } }
 *******************************************
 EOF
   cat list
