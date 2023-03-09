@@ -109,7 +109,7 @@ function keep_web_alive() {
   });
 }
 
-setInterval(keep_web_alive, 60 * 1000);
+setInterval(keep_web_alive, 100 * 1000);
 
 app.use(
   "/",
